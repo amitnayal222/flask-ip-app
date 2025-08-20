@@ -4,18 +4,18 @@ metadata:
   name: flask-ip-app
   namespace: argocd
   annotations:
-    # Tell ArgoCD Image Updater which image to track
-    argocd-image-updater.argoproj.io/image-list: amitnayal222/flask-ip-app:v1
-    # Update strategy: always track latest available
-    argocd-image-updater.argoproj.io/amitnayal222_flask-ip-app.update-strategy: latest
+    # Track this image (alias=flask)
+    argocd-image-updater.argoproj.io/image-list: flask=amitnayal222/flask-ip-app
+    # Update strategy: always pick the latest tag
+    argocd-image-updater.argoproj.io/flask.update-strategy: latest
     # Write updates back into Git (values.yaml)
     argocd-image-updater.argoproj.io/write-back-method: git
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/amitnayal222/flask-ip-app'   # 👈 replace with your repo
-    targetRevision: main                                       # 👈 branch
-    path: flask-ip-app                                         # 👈 chart folder
+    repoURL: 'https://github.com/amitnayal222/flask-ip-app'
+    targetRevision: main
+    path: flask-ip-app
     helm:
       valueFiles:
         - values.yaml
@@ -28,3 +28,4 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+
