@@ -4,5 +4,5 @@ helm:
     value: amitnayal222/flask-ip-app
     forcestring: true
   - name: image.tag
-    value: v5
+    value: v6
     forcestring: true
