@@ -4,12 +4,10 @@ metadata:
   name: flask-ip-app
   namespace: argocd
   annotations:
-    # Track this image (alias=flask)
     argocd-image-updater.argoproj.io/image-list: flask=amitnayal222/flask-ip-app
-    # Update strategy: always pick the latest tag
-    argocd-image-updater.argoproj.io/flask.update-strategy: latest
-    # Write updates back into Git (values.yaml)
-    argocd-image-updater.argoproj.io/write-back-method: git
+    argocd-image-updater.argoproj.io/flask.helm.values: image.tag
+    argocd-image-updater.argoproj.io/flask.update-strategy: alphabetical
+    argocd-image-updater.argoproj.io/write-back-method: git:values
 spec:
   project: default
   source:
