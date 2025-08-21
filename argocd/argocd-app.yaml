@@ -8,10 +8,11 @@ metadata:
     argocd-image-updater.argoproj.io/flask.helm.values: image.tag
     argocd-image-updater.argoproj.io/flask.update-strategy: semver
     argocd-image-updater.argoproj.io/write-back-method: git:values
+    argocd-image-updater.argoproj.io/write-back-path: values.yaml
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/amitnayal222/flask-ip-app'
+    repoURL: 'https://github.com/amitnayal222/flask-ip-app.git'
     targetRevision: main
     path: flask-ip-app
     helm:
