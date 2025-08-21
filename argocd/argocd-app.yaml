@@ -6,7 +6,7 @@ metadata:
   annotations:
     argocd-image-updater.argoproj.io/image-list: flask=amitnayal222/flask-ip-app
     argocd-image-updater.argoproj.io/flask.helm.values: image.tag
-    argocd-image-updater.argoproj.io/flask.update-strategy: alphabetical
+    argocd-image-updater.argoproj.io/flask.update-strategy: semver
     argocd-image-updater.argoproj.io/write-back-method: git:values
 spec:
   project: default
