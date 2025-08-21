@@ -1,8 +1,0 @@
-helm:
-  parameters:
-  - name: image.name
-    value: amitnayal222/flask-ip-app
-    forcestring: true
-  - name: image.tag
-    value: v6
-    forcestring: true
